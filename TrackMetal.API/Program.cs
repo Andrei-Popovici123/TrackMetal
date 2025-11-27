@@ -1,6 +1,20 @@
+using DotNetEnv;
+using Microsoft.EntityFrameworkCore;
+using TrackMetal.API.Data;
+
+Env.Load();
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+var connectionStringTemplate = builder.Configuration.GetConnectionString("DefaultConnection")
+                               ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+var connectionString = connectionStringTemplate
+    .Replace("{DB_SERVER}", Environment.GetEnvironmentVariable("DB_SERVER")!)
+    .Replace("{DB_NAME}", Environment.GetEnvironmentVariable("DB_NAME")!);
+
+builder.Services.AddDbContext<TrackMetalDbContext>(option => option.UseSqlServer(connectionString));
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
