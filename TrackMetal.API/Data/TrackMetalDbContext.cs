@@ -10,4 +10,7 @@ public class TrackMetalDbContext : DbContext
     }
     
     public DbSet<Car> Cars { get; set; }
+    public DbSet<Setup> Setups { get; set; }
+    public DbSet<Track> Tracks { get; set; }
+    public DbSet<Corner> Corners { get; set; }
 }
