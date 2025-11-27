@@ -8,11 +8,35 @@ public class CarsController : ControllerBase
 {
     public CarsController()
     {
-        
+
     }
 
-    [HttpGet, Route("api/cars")]
+    [HttpGet]
     public IActionResult GetAllCars()
+    {
+        return Ok();
+    }
+
+    [HttpGet, Route("{id}")]
+    public IActionResult GetCarById(int id)
+    {
+        return Ok();
+    }
+
+    [HttpPost]
+    public IActionResult CreateCar()
+    {
+        return Ok();
+    }
+
+    [HttpPut]
+    public IActionResult UpdateCar()
+    {
+        return Ok();
+    }
+
+    [HttpDelete, Route("{id}")]
+    public IActionResult DeleteCar(int id)
     {
         return Ok();
     }
