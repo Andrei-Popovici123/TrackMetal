@@ -4,11 +4,19 @@ namespace TrackMetal.API.Models
 {
     public class Corner
     {
-        [Key]
         public int CornerId { get; set; }
-        [Required]
+        
+        public int Sector { get; set; }
+            
         public string Name { get; set; } = string.Empty;
-        [Required]
+
+        public string OfficialName { get; set; } = string.Empty;
+        
         public string Type { get; set; } = string.Empty;
+
+        public virtual Track Track { get; set; } = null!;
+        public int TrackId { get; set; }
+
+
     }
 }
