@@ -1,6 +1,8 @@
 using DotNetEnv;
 using Microsoft.EntityFrameworkCore;
 using TrackMetal.API.Data;
+using TrackMetal.API.Models;
+using TrackMetal.API.Repositories;
 
 Env.Load();
 
@@ -15,6 +17,14 @@ var connectionString = connectionStringTemplate
     .Replace("{DB_NAME}", Environment.GetEnvironmentVariable("DB_NAME")!);
 
 builder.Services.AddDbContext<TrackMetalDbContext>(option => option.UseSqlServer(connectionString));
+
+builder.Services.AddScoped<IRepository<Car>, BaseRepository<Car>>();
+
+builder.Services.AddScoped<IRepository<Setup>, BaseRepository<Setup>>();
+
+builder.Services.AddScoped<IRepository<Track>, BaseRepository<Track>>();
+
+builder.Services.AddScoped<IRepository<Corner>, BaseRepository<Corner>>();
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
