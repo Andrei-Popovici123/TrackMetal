@@ -24,5 +24,6 @@ public class TrackMetalDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
         new CarConfiguration().Configure(modelBuilder.Entity<Car>());
+
     }
 }

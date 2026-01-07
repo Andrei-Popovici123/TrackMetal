@@ -10,4 +10,6 @@ public class Car
     public int Year { get; set; }
     public int Hp { get; set; }
     public string Category { get; set; } = string.Empty;
+    public ICollection<Setup> Setups { get; set; } = new HashSet<Setup>();
+    
 }
