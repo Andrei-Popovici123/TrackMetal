@@ -14,6 +14,11 @@ public class TrackMetalDbContext : DbContext
     public DbSet<Setup> Setups { get; set; }
     public DbSet<Track> Tracks { get; set; }
     public DbSet<Corner> Corners { get; set; }
+    public DbSet<User> Users { get; set; }
+    public DbSet<LapTime> LapTimes { get; set; }
+    public DbSet<CommunityPost> CommunityPosts { get; set; }
+    public DbSet<CommunityComments> CommunityComments { get; set; }
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
