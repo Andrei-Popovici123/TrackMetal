@@ -6,5 +6,7 @@
         public int UserId { get; set; }
         public string Title { get; set; } = string.Empty;
         public string Content { get; set; } = string.Empty;
+        public DateTime TimeStamp { get; set; }
+        public ICollection<CommunityComments> Comments { get; set; } = new List<CommunityComments>();
     }
 }

@@ -11,6 +11,9 @@ public class CarConfiguration : IEntityTypeConfiguration<Car>
         builder.ToTable("Cars")
             .HasKey(c => c.CarId);
 
+        builder.Property(c => c.UserId)
+            .IsRequired();
+
         builder.Property(c => c.Model)
             .IsRequired()
             .HasMaxLength(50);

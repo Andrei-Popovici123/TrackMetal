@@ -24,6 +24,12 @@ public class TrackMetalDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
         new CarConfiguration().Configure(modelBuilder.Entity<Car>());
-
+        new CornerConfiguration().Configure(modelBuilder.Entity<Corner>());
+        new SetupConfiguration().Configure(modelBuilder.Entity<Setup>());
+        new TrackConfiguration().Configure(modelBuilder.Entity<Track>());
+        new CommunityCommentConfiguration().Configure(modelBuilder.Entity<CommunityComments>());
+        new CommunityPostConfiguration().Configure(modelBuilder.Entity<CommunityPost>());
+        new LapTimeConfiguration().Configure(modelBuilder.Entity<LapTime>());
+        new UserConfiguration().Configure(modelBuilder.Entity<User>());
     }
 }
