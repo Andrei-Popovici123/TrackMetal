@@ -4,7 +4,7 @@ using TrackMetal.API.Models;
 
 namespace TrackMetal.API.Configurations;
 
-public class CornerConfiguration:IEntityTypeConfiguration<Corner>
+public class CornerConfiguration : IEntityTypeConfiguration<Corner>
 {
     public void Configure(EntityTypeBuilder<Corner> builder)
     {
@@ -17,11 +17,11 @@ public class CornerConfiguration:IEntityTypeConfiguration<Corner>
         builder.Property(c => c.Name)
             .IsRequired()
             .HasMaxLength(10);
-        
+
         builder.Property(c => c.OfficialName)
             .IsRequired()
             .HasMaxLength(100);
-        
+
         builder.Property(c => c.Type)
             .IsRequired()
             .HasMaxLength(20);

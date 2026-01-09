@@ -15,8 +15,11 @@ namespace TrackMetal.API.Models
 
         public string CircuitType { get; set; } = string.Empty;
 
+        public int LapRecord { get; set; }
+
         public ICollection<Corner> Corners { get; set; } = new HashSet<Corner>();
         public ICollection<Setup> Setups { get; set; } = new HashSet<Setup>();
+        public ICollection<LapTime> LapTimes { get; set; } = new List<LapTime>();
 
 
     }
